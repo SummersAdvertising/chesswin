@@ -7,7 +7,7 @@ gem 'rails', '3.2.6'
 
 # gem 'sqlite3'
 # gem 'pg'
-gem 'mysql'
+gem 'mysql2'
 
 
 # Gems used only for assets and not required
@@ -23,6 +23,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'execjs'
+gem 'therubyracer'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -34,7 +36,9 @@ gem 'jquery-rails'
 # gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+
+gem 'capistrano'
+gem 'capistrano-ext'
 
 # To use debugger
 # gem 'debugger'

@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Jasonhazel::Application.load_tasks
+Chesswin::Application.load_tasks
