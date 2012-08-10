@@ -1,0 +1,20 @@
+<% if notice
+		%>		
+		<p class="warning"><%= notice %></p>		
+		<%
+end %>
+
+<%= form_for( @user, :url => {:controller => :users, :action => :get_permission} ) do | f |  %>
+	<%= hidden_field_tag 'redirect',  session[:redirect]  %>
+	<dl>
+		<dt>帳號</dt>
+		<dd><%= f.text_field :username%></dd>
+		
+		<dt>密碼</dt>
+		<dd><%= f.password_field :password %></dd>
+		
+		<dt><%= f.submit "登入" %></dt>
+	</dl>
+	
+
+<% end %>

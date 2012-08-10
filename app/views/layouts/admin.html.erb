@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>  歡迎來到 Jasonhazel </title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield %>
+
+	<div id="footer">		
+		<p>Jason & Hazel All Rights Reserved</p>
+		<p><%= link_to '登出' + session[ :user ][ :username ], root_url + 'logout' %></p> 
+	</div>
+
+</body>
+</html>
