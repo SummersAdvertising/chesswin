@@ -1,0 +1,2 @@
+class CasestudiesController < ApplicationController
+end

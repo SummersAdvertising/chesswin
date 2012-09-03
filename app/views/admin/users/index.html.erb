@@ -1,27 +1,23 @@
-<h1>Listing users</h1>
 
-<table>
-  <tr>
-    <th>Username</th>
-    <th>Password</th>
-    <th>Last login</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+    <%= render :partial => "form" %>
+    
+    <p id="notice"><%= notice %></p>
+    
+    <!--main-text-->
+    <div class="main-list">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr class="main-list-title">
+          <th width="17%" align="center" scope="col">姓名</th>
+          <th width="75%" align="left" scope="col">帳號</th>
+          <th width="8%" align="center" scope="col">刪除</th>
+        </tr>
+        <% @users.each do |user| %>
+        <tr>
+          <td align="center"><%= user.name %></td>
+          <td align="left"><%= user.username %></td>
+          <td align="center"><%= link_to [:admin, user], method: :delete, data: { confirm: "確定刪除" + user.name + "?" } do %><img src="<%= image_path( "delete.png" ) %>"><% end %></td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
 
-<% @users.each do |user| %>
-  <tr>
-    <td><%= user.username %></td>
-    <td><%= user.password %></td>
-    <td><%= user.last_login %></td>
-    <td><%= link_to 'Show', admin_user_path(user) %></td>
-    <td><%= link_to 'Edit', edit_admin_user_path(user) %></td>
-    <td><%= link_to 'Destroy', [:admin, user], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New User', new_admin_user_path %>

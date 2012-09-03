@@ -11,7 +11,42 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120810034927) do
+ActiveRecord::Schema.define(:version => 20120831091834) do
+
+  create_table "casestudies", :force => true do |t|
+    t.string   "title"
+    t.string   "subtitle"
+    t.string   "client"
+    t.string   "category"
+    t.datetime "active_time"
+    t.string   "place"
+    t.string   "invitation"
+    t.text     "content"
+    t.text     "photos"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.datetime "active_time_end"
+  end
+
+  create_table "photos", :force => true do |t|
+    t.integer  "casestudy_id"
+    t.string   "path"
+    t.string   "description"
+    t.string   "ext"
+    t.string   "stauts"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "sessions", :force => true do |t|
+    t.string   "session_id", :null => false
+    t.text     "data"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
+  add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
   create_table "users", :force => true do |t|
     t.string   "username"
@@ -19,6 +54,7 @@ ActiveRecord::Schema.define(:version => 20120810034927) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.datetime "last_login"
+    t.string   "name"
   end
 
 end

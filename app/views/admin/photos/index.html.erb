@@ -1,0 +1,23 @@
+
+<%= stylesheet_link_tag "filedrop" %>
+
+<%= render :partial => 'form' %>
+
+
+<%#= link_to '建立新圖片', new_admin_casestudy_photo_path( @casestudy ) %>
+
+<div id="imgTemplate" style="display: none">
+	<div style="float:left; margin: 20px;">
+			<dt></dt>
+			<dd><img height="240" src="" /></dd>
+	</div>	
+</div>
+
+<dl>
+<% @photos.each do | photo | %>
+	<div style="float:left; margin: 20px;">
+		<dt>Updated_at: <%= photo.updated_at %> | <%= link_to 'Delete', admin_casestudy_photo_path(@casestudy, photo), :method => :delete, data: { confirm: "確定要刪除此圖片？" } %></dt>
+		<dd><img height="240" src="<%= photo.path %>" /></dd>
+	</div>
+<% end %>
+</dl>

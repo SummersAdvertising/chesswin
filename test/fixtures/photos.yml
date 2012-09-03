@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  casestudy_id: 1
+  path: MyString
+  description: MyString
+  ext: MyString
+  stauts: MyString
+
+two:
+  casestudy_id: 1
+  path: MyString
+  description: MyString
+  ext: MyString
+  stauts: MyString

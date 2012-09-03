@@ -1,0 +1,47 @@
+<div class="main-title">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td valign="top" class="title" height="22" width="98"><%= @casestudy.active_time.to_s( :date ) %></td>
+      <td valign="middle" class="text"><%= @casestudy.title %></td>
+    </tr>
+  </table>
+</div>
+
+    <div class="main-text">
+    
+      <table width="100%" border="0" cellspacing="5" cellpadding="0">
+        <tr>
+          <th width="7%" align="left" valign="top">副標</th>
+          <td colspan="7" valign="top"><%= @casestudy.subtitle %></td>
+        </tr>
+        
+        <tr>
+          <th width="7%" align="left" valign="top">客戶</th>
+          <td width="43%" valign="top"><%= @casestudy.client %></td>
+          <th width="7%" align="left" valign="top">類別</th>
+          <td width="43%" colspan="5" valign="top"><%= @casestudy.category %></td>
+        </tr>
+        <tr>
+          <th align="left" valign="top">時間</th>
+          <td valign="top"><%= @casestudy.active_time.to_s( :date_slashed ) %>~<%= @casestudy.active_time_end.to_s( :date_slashed ) %></td>
+          <th align="left" valign="top">地點</th>
+          <td colspan="5" valign="top"><%= @casestudy.place %></td>
+        </tr>
+        <tr>
+          <th align="left" valign="top">對象</th>
+          <td valign="top"><%= @casestudy.invitation %></td>
+          <th align="left" valign="top">&nbsp;</th>
+          <td colspan="5" valign="top">&nbsp;</td>
+        </tr>
+        
+      </table>
+      <div class="main-text"><%= @casestudy.content.gsub(/\n/, "<br />").html_safe %></div>      
+</div>
+
+    <div class="button"><%= link_to edit_admin_casestudy_path(@casestudy) do %><img src="<%= image_path("edit.png") %>" />編輯<% end %></div>
+    <div class="button"><%= link_to admin_casestudies_path do %><img src="<%= image_path("back.png") %>" />返回<% end %></div>
+
+	<p id="notice"><%= notice %></p>
+	    
+    <%= render :partial => "admin/photos/list" %>
+    

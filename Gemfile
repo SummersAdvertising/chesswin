@@ -42,3 +42,6 @@ gem 'capistrano-ext'
 
 # To use debugger
 # gem 'debugger'
+
+gem 'carrierwave'
+gem 'mini_magick'

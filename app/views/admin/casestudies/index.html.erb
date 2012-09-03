@@ -1,0 +1,19 @@
+<div class="button"><%= link_to new_admin_casestudy_path do %><img src="<%= image_path("add.png") %>" />新增案例<% end %></div>
+<div class="main-list">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr class="main-list-title">
+      <th width="15%" align="center" scope="col">日期</th>
+      <th width="71%" align="left" scope="col">活動標題</th>
+      <th width="7%" align="center" scope="col">編輯</th>
+      <th width="7%" align="center" scope="col">刪除</th>
+    </tr>
+    <% @casestudies.each do |casestudy| %>
+    <tr>
+      <td align="center"> <%= casestudy.active_time.to_s( :date ) %> </td>
+      <td align="left"><%= link_to casestudy.title, admin_casestudy_path(casestudy) %></td>
+      <td align="center"><%= link_to edit_admin_casestudy_path(casestudy) do %><img src="<%= image_path("edit.png") %>" width="16" height="16" /><% end %></td>
+      <td align="center"><%= link_to admin_casestudy_path(casestudy), method: :delete, data: { confirm: '確定刪除此案例？' } do %><img src="<%= image_path("delete.png") %>" /><% end %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>

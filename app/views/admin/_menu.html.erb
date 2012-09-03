@@ -1,0 +1,7 @@
+
+  <div id="side" class="left">
+    <ul>
+      <li><%= link_to "成功案例", admin_casestudies_path, :id => "project", :class => ( params[ :controller ] == "admin/casestudies" ? "active" : "" ) %></li>
+      <li><%= link_to "使用者管理", admin_users_path, :id => "users", :class => ( params[ :controller ] == "admin/users" ? "active" : "" )  %></li>
+    </ul>
+  </div>

@@ -1,6 +1,46 @@
-<h1>Editing user</h1>
+<script type="text/javascript">
+	
+	function checkForm() {
+		var is_error = false;
+		var errors = "";
+		
+		$("input[id^=user]").each( function() {
+			if ( $(this).val().length <= 0 ) {
+				is_error = true;
+				errors += $("label[for=" + $(this).attr('id') + "]").html() + "不得為空\n";
+			}			
+			
+			
+		} );
+		
+		if ( $("#passwordConfirm").val() != $("#user_password").val() ) {
+				is_error = true;
+				errors += "請重新檢查密碼\n";			
+		}
+		
+		if ( is_error ) {
+			alert(errors);
+			return false;
+		}
+	}
+	
+</script>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', admin_user_path(@user) %> |
-<%= link_to 'Back', admin_users_path %>
+<h2><img src="<%= image_path("psw.png") %>" width="16" height="16" /> 重設您的密碼</h2>
+<%= form_for([:admin, @user]) do | f | %>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="left"><%= f.label :password, "請輸入新密碼" %><br>
+      <%= f.password_field :password, :placeholder => "請輸入密碼", :value => "" %></td>
+  </tr>
+  <tr>
+    <td align="left">再次確認新密碼<br>
+      <input type="password" name="textfield" id="passwordConfirm" placeholder="請再次輸入密碼" /></td>
+  </tr>
+</table>
+<div class="button">
+  <input name="" type="button" />
+  <%= f.submit "變更", :onClick => "return checkForm();" do %><img src="<%= image_path("check.png") %>" /><% end %></div>
+</div>
+  
+<% end %>

@@ -4,8 +4,8 @@ class AdminController < ApplicationController
 	
 	def permission
 		# 驗證使用者登入狀況	
-		if session[ :user ].nil?
-			
+		
+		if session[ :user ].nil?			
 			session[ :redirect ] = request.url
 			
 			# 如果沒有登入就導向到登入頁面
@@ -14,7 +14,7 @@ class AdminController < ApplicationController
 			end
 		end
 	end
-	
+		
 	def index
 		
 		respond_to do | format |

@@ -1,6 +1,12 @@
 Chesswin::Application.routes.draw do
+  resources :casestudies
+
   namespace :admin do 
   	resources :users 
+  	resources :casestudies do
+  		resources :photos
+  	end
+  	resources :photos
   end
 
   # The priority is based upon order of creation:

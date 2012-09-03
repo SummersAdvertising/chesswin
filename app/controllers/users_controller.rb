@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-
+  
+  layout "admin_narrow"
+  
   def login
   	respond_to do | format |
   		if session[ :user ].nil?
@@ -39,7 +41,7 @@ class UsersController < ApplicationController
 		  	session[ :user ][ :password ] = '**hidden**'
 		  	params[ :session ] = session
 		  	
-		  	if params[ :redirect ].nil?
+		  	if params[ :redirect ].length <= 0
 		  		format.html { redirect_to :controller => :admin }
 		  	else
 		  		format.html { redirect_to params[ :redirect ] }

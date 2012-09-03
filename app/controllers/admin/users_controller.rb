@@ -1,8 +1,10 @@
 class Admin::UsersController < AdminController
+
   # GET /users
   # GET /users.json
   def index
     @users = User.all
+    @user = User.new
 
     respond_to do |format|
       format.html # index.html.erb
@@ -21,20 +23,10 @@ class Admin::UsersController < AdminController
     end
   end
 
-  # GET /users/new
-  # GET /users/new.json
-  def new
-    @user = User.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @user }
-    end
-  end
-
   # GET /users/1/edit
-  def edit
+  def edit  	
     @user = User.find(params[:id])
+  	render :layout => "admin_narrow"
   end
 
   # POST /users
@@ -45,10 +37,12 @@ class Admin::UsersController < AdminController
     
     respond_to do |format|
       if @user.save
-        format.html { redirect_to [:admin, @user], notice: 'User was successfully created.' }
+        format.html { redirect_to admin_users_path, notice: 'User was successfully created.' }
         format.json { render json: [:admin, @user], status: :created, location: @user }
       else
-        format.html { render action: "new" }
+      	@users = User.all
+      	
+        format.html { render action: "index" }
         format.json { render json: [:admin, @user].errors, status: :unprocessable_entity }
       end
     end
@@ -63,7 +57,7 @@ class Admin::UsersController < AdminController
     
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to [:admin, @user], notice: 'User was successfully updated.' }
+        format.html { redirect_to admin_users_path, notice: 'User was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -75,10 +69,7 @@ class Admin::UsersController < AdminController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
-  
-  
-
-    respond_to do |format|
+      respond_to do |format|
 	  	if User.all.length <= 1 
 	  	
 		    format.html { redirect_to admin_users_url, :notice => 'You cannot kill all user.' }

@@ -1,0 +1,65 @@
+<%= form_for([:admin, @casestudy]) do |f| %>
+  <% if @casestudy.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@casestudy.errors.count, "error") %> prohibited this casestudy from being saved:</h2>
+
+      <ul>
+      <% @casestudy.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+<div class="main-title">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td valign="top" class="title" height="22" width="98"><%= @casestudy.created_at.to_s( :date ) %></td>
+      <td valign="middle" class="text"><%= f.text_field :title, :placeholder => "請輸入標題" %></td>
+    </tr>
+  </table>
+</div>
+<div class="main-text">
+ <table width="100%" border="0" cellspacing="5" cellpadding="0">
+    <tr>
+      <th width="7%" align="left" valign="top"><%= f.label :subtitle, "副標" %></th>
+      <td colspan="7" valign="top"><%= f.text_field :subtitle, :style => "width:98%" %></td>
+    </tr>
+    
+    <tr>
+      <th width="7%" align="left" valign="top"><%= f.label :client, "客戶" %></th>
+      <td width="43%" valign="top"><%= f.text_field :client %></td>
+      <th width="7%" align="left" valign="top">類別</th>
+      <td width="43%" colspan="5" valign="top"><input name="" type="text" /></td>
+    </tr>
+    <tr>
+      <th align="left" valign="top"><%= f.label :active_time, "時間" %></th>
+      <td valign="top">
+	      <%= f.text_field :active_time, :value => (@casestudy.active_time.to_s(:date) if !@casestudy.active_time.nil?), :style => "width: 114px;", :class => "datePicker", :placeholder => "請點擊後選取" %>~ 
+	      <%= f.text_field :active_time_end, :value => (@casestudy.active_time_end.to_s(:date) if !@casestudy.active_time_end.nil?), :style => "width: 114px;", :class => "datePicker", :placeholder => "請點擊後選取"  %>
+      </td>
+      <th align="left" valign="top"><%= f.label :place, "地點" %></th>
+      <td colspan="5" valign="top"><%= f.text_field :place %></td>
+    </tr>
+    <tr>
+      <th align="left" valign="top"><%= f.label :invitation, "對象" %></th>
+      <td valign="top"><%= f.text_field :invitation %></td>
+      <th align="left" valign="top">&nbsp;</th>
+      <td colspan="5" valign="top">&nbsp;</td>
+    </tr>
+    <th width="7%" align="left" valign="top"><%= f.label :content, "內文" %></th>
+      <td colspan="7" valign="top"><%= f.text_area :content, :class => "autogrow" %></td>
+  </table>
+
+</div>
+
+<div style="clear:both;">&nbsp;</div>
+<div class="button"><%= f.submit "儲存" do %><img src="<%= image_path"save.png" %>" /><% end %></div>
+<div class="button"><%= link_to admin_casestudies_path do %><img src="<%= image_path"cancel.png" %>" />取消<% end %></div>
+
+<% end %>
+
+
+<script type="text/javascript" >
+	$('.datePicker').datepicker({ dateFormat: "yy-mm-dd" });
+</script>

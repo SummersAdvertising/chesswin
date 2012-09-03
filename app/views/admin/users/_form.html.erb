@@ -1,3 +1,32 @@
+<script type="text/javascript">
+	
+	function checkForm() {
+		var is_error = false;
+		var errors = "";
+		
+		$("input[id^=user]").each( function() {
+			if ( $(this).val().length <= 0 ) {
+				is_error = true;
+				errors += $("label[for=" + $(this).attr('id') + "]").html() + "不得為空\n";
+			}			
+			
+			
+		} );
+		
+		if ( $("#passwordConfirm").val() != $("#user_password").val() ) {
+				is_error = true;
+				errors += "請重新檢查密碼\n";			
+		}
+		
+		if ( is_error ) {
+			alert(errors);
+			return false;
+		}
+	}
+	
+</script>
+
+<div class="main-text">
 <%= form_for([:admin, @user]) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
@@ -10,20 +39,23 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :username %><br />
-    <%= f.text_field :username %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.text_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :last_login %><br />
-    <%= f.text_field :last_login %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	  <tr>
+	    <th width="10%"><%= f.label :name, "姓名" %></th>
+	    <td width="20%"><%= f.text_field :name, :placeholder => "請輸入使用者姓名" %></td>
+	    <th width="10%"><%= f.label :username, "帳號" %></th>
+	    <td width="60%"><%= f.text_field :username, :placeholder => "請輸入使用者登入帳號" %></td>
+	  </tr>
+	</table>
+	
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top:10px">
+	  <tr>
+	    <th width="10%"><%= f.label :password, "密碼" %></th>
+	    <td width="37%"><%= f.text_field :password, :placeholder => "請輸入密碼" %></td>
+	    <th width="15%">確認密碼</th>
+	    <td width="38%"><input id="passwordConfirm" type="password" placeholder="請再次輸入密碼" name="textfield" /></td>
+	  </tr>
+	</table>	
+</div>
+<div class="button"><%= f.submit "新增帳號", :onClick => "return checkForm();" do %><img src="images/add.png"><% end %></div>
 <% end %>

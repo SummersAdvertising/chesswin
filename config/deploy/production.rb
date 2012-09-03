@@ -24,10 +24,7 @@ namespace :deploy do
 	desc "restart"
 	task :restart do
 		run "touch #{current_path}/tmp/restart.txt"
-		run "ln -s  #{shared_path}/production/uploads/banners #{current_path}/public/banners"
-		run "ln -s #{shared_path}/production/uploads/news #{current_path}/public/news"
-		run "ln -s #{shared_path}/production/uploads/user_exps #{current_path}/public/user_exps"
-		run "ln -s #{shared_path}/production/uploads #{current_path}/public/uploads"
+		run "ln -s  #{shared_path}/production/uploads/casestudies #{current_path}/public/casestudies"
 		
 		run "cd #{current_path}; RAILS_ENV=production bundle exec rake cache:clear"
 	end
