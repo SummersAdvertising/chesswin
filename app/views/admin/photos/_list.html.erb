@@ -1,9 +1,10 @@
+
 <h2 style="clear:both">圖片列表</h2>
 <div class="main-data">
 <ul>
 <% @photos.each do | photo | %>
-    <li><img src="<%= photo.path.normal %>"/>
-	    <%= link_to admin_casestudy_photo_path(@casestudy, photo), :method => :delete, data: { confirm: "確定要刪除此圖片？" } do %>
+    <li data-pid="<%= photo.id %>"><img src="<%= photo.path.normal %>"/>
+	    <%= link_to admin_casestudy_photo_path(@casestudy, photo), :method => :delete, data: { confirm: '確定刪除圖片？' }, remote: true do %>
 	    	<img src="<%= image_path("delete-img.png") %>"/>
 	    <% end %>
     </li>

@@ -59,7 +59,7 @@
 	$.fn.filedrop = function(options) {
 		opts = $.extend( {}, default_opts, options );
 		
-		this.bind('drop', drop).bind('dragenter', dragEnter).bind('dragover', dragOver).bind('dragleave', dragLeave);
+		this.bind('drop', drop).bind('dragenter', dragEnter).bind('dragover', dragOver).bind('dragleave', dragLeave).bind('click', boxClicked);
 		$(document).bind('drop', docDrop).bind('dragenter', docEnter).bind('dragover', docOver).bind('dragleave', docLeave);
 	};
      
@@ -140,6 +140,7 @@
     
 	function upload() {
 		stop_loop = false;
+		
 		if (!files) {
 			opts.error(errors[0]);
 			return false;
@@ -254,6 +255,8 @@
 	}
 	
 	function dragEnter(e) {
+		$(this).addClass('dropboxHover');
+		
 		clearTimeout(doc_leave_timer);
 		e.preventDefault();
 		opts.dragEnter(e);
@@ -267,6 +270,8 @@
 	}
 	 
 	function dragLeave(e) {
+		$(this).removeClass('dropboxHover');
+		
 		clearTimeout(doc_leave_timer);
 		opts.dragLeave(e);
 		e.stopPropagation();
@@ -297,12 +302,34 @@
 			opts.docLeave(e);
 		}, 200);
 	}
+	
+	function boxClicked(e) {
+	
+		var fileUploader = $(document.createElement('input'));
+		
+		fileUploader.attr('type', 'file').change(fileSelected);
+		fileUploader.click();
+	}
+	
+	function fileSelected(e) {
+	
+		files = e.currentTarget.files;
+		
+		if (files === null || files === undefined) {
+			opts.error(errors[0]);
+			return false;
+		}
+		
+		files_count = files.length;
+		upload();
+		e.preventDefault();
+	}
 	 
 	function empty(){}
 	
 	try {
 		if (XMLHttpRequest.prototype.sendAsBinary) return;
-		XMLHttpRequest.prototype.sendAsBinary = function(datastr) {
+		XMLHttpRequest.prototype.sendAsBinary = function(datastr) {		
 		    function byteValue(x) {
 		        return x.charCodeAt(0) & 0xff;
 		    }
@@ -313,10 +340,3 @@
 	} catch(e) {}
      
 })(jQuery);
-
-
-(function($){})(jQuery);
-
-(function($){})(jQuery);
-
-(function($){})(jQuery);

@@ -2,7 +2,7 @@ class Admin::CasestudiesController < AdminController
   # GET /casestudies
   # GET /casestudies.json
   def index
-    @casestudies = Casestudy.all
+    @casestudies = Casestudy.order( "created_at DESC" ).all
 
     respond_to do |format|
       format.html # index.html.erb

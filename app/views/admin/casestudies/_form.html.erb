@@ -1,3 +1,6 @@
+
+  <%= stylesheet_link_tag "jquery.ui.datepicker" %>
+  
 <%= form_for([:admin, @casestudy]) do |f| %>
   <% if @casestudy.errors.any? %>
     <div id="error_explanation">
@@ -14,7 +17,7 @@
 <div class="main-title">
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
     <tr>
-      <td valign="top" class="title" height="22" width="98"><%= @casestudy.created_at.to_s( :date ) %></td>
+      <td valign="top" class="title" height="22" width="98"><%= @casestudy.created_at.nil? ? Time.now.to_s( :date ) : @casestudy.created_at.to_s( :date ) %></td>
       <td valign="middle" class="text"><%= f.text_field :title, :placeholder => "請輸入標題" %></td>
     </tr>
   </table>
@@ -30,7 +33,7 @@
       <th width="7%" align="left" valign="top"><%= f.label :client, "客戶" %></th>
       <td width="43%" valign="top"><%= f.text_field :client %></td>
       <th width="7%" align="left" valign="top">類別</th>
-      <td width="43%" colspan="5" valign="top"><input name="" type="text" /></td>
+      <td width="43%" colspan="5" valign="top"><%= f.text_field :category  %></td>
     </tr>
     <tr>
       <th align="left" valign="top"><%= f.label :active_time, "時間" %></th>

@@ -9,7 +9,7 @@
     </tr>
     <% @casestudies.each do |casestudy| %>
     <tr>
-      <td align="center"> <%= casestudy.active_time.to_s( :date ) %> </td>
+      <td align="center"> <%= casestudy.created_at.to_s( :date ) %> </td>
       <td align="left"><%= link_to casestudy.title, admin_casestudy_path(casestudy) %></td>
       <td align="center"><%= link_to edit_admin_casestudy_path(casestudy) do %><img src="<%= image_path("edit.png") %>" width="16" height="16" /><% end %></td>
       <td align="center"><%= link_to admin_casestudy_path(casestudy), method: :delete, data: { confirm: '確定刪除此案例？' } do %><img src="<%= image_path("delete.png") %>" /><% end %></td>
