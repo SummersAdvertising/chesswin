@@ -24,7 +24,7 @@ namespace :deploy do
 	desc "restart"
 	task :restart do
 		run "touch #{current_path}/tmp/restart.txt"
-		run "ln -s  #{shared_path}/production/uploads/casestudies #{current_path}/public/casestudies"
+		run "ln -s  #{shared_path}/uploads/ #{current_path}/public/uploads"
 		
 		run "cd #{current_path}; RAILS_ENV=production bundle exec rake db:migrate rake cache:clear"
 	end
