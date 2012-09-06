@@ -188,13 +188,14 @@
 			
 			var xhr = new XMLHttpRequest(),
 				upload = xhr.upload,
-				file = files[e.target.index],
+				file = files[e.target.index],				
 				index = e.target.index,
 				start_time = new Date().getTime(),
 				boundary = '------multipartformboundary' + (new Date).getTime(),
 				builder;
 				
 			newName = rename(file.name);
+			console.log(newName);
 			if (typeof newName === "string") {
 				builder = getBuilder(newName, e.target.result, boundary);
 			} else {

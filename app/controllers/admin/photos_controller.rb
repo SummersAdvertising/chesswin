@@ -1,4 +1,4 @@
-# encoding: UTF-8
+#encoding: utf-8
 class Admin::PhotosController < AdminController
 	before_filter :get_casestudy
 	layout "simple"

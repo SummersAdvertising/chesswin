@@ -1,3 +1,4 @@
+#encoding: utf-8
 class Admin::CasestudiesController < AdminController
   # GET /casestudies
   # GET /casestudies.json

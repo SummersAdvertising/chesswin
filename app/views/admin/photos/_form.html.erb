@@ -61,6 +61,10 @@ $(function(){
 			}
 		},
 		
+		rename: function(string) {
+			return "image." + string.split('.').pop();
+		},
+		
 		// Called before each upload is started
 		beforeEach: function(file){
 			if(!file.type.match(/^image\//)){
