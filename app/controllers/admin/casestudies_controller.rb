@@ -48,7 +48,7 @@ class Admin::CasestudiesController < AdminController
 
     respond_to do |format|
       if @casestudy.save
-        format.html { redirect_to admin_casestudy_path(@casestudy), notice: 'Casestudy was successfully created.' }
+        format.html { redirect_to edit_admin_casestudy_path(@casestudy), notice: 'Casestudy was successfully created.' }
         format.json { render json: @casestudy, status: :created, location: @casestudy }
       else
         format.html { render action: "new" }
