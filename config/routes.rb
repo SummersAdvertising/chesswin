@@ -1,5 +1,6 @@
 Chesswin::Application.routes.draw do
   resources :casestudies
+  resources :pages
 
   namespace :admin do 
   	resources :users 

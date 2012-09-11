@@ -1,0 +1,26 @@
+/*-------------------------------------------------------------------全域---*/
+
+body{font:300 15px "微軟正黑體";background:image-url("header.png") center 0 no-repeat #343434;}
+a{font:300 15px "微軟正黑體";text-decoration:none}
+a:hover{text-decoration:underline}
+#wrapper{width:1024px;margin:0 auto;background:image-url("header.png") center 0 no-repeat}
+
+/*-------------------------------------------------------------------頁首---*/
+
+header{height:107px}
+header h1{float:left;width:55%;margin-top:15px}
+header h1 a{display:block;width:170px;height:79px;background:image-url("logo.png") 0 0 no-repeat;font-size:0;text-indent:-9999px}
+header nav{float:right;width:42%;margin:70px 3% 0 0;height:37px}
+header nav li{float:left;width:25%;*width:107px;height:37px;text-align:center}
+header nav li a{color:#000;text-shadow:0 1px 0 #eee}
+header nav .active{background:image-url("active.png") center bottom no-repeat}
+
+/*-------------------------------------------------------------------頁身---*/
+
+#container{background:image-url("bg.jpg") 0 -120px no-repeat;}
+h2{padding:20px 0 0 20px;height:150px}
+
+/*-------------------------------------------------------------------頁尾---*/
+
+footer{background:image-url("footer-bg.jpg") top center no-repeat;color:#fff;text-align:center;width:100%;height:49px;margin:50px 0 0 0;padding-top:5px;font-size:13px;text-shadow:0 0 5px #000}
+footer img{position:relative;top:7px;margin:0 5px 0 0}

@@ -1,0 +1,8 @@
+    <nav>
+      <ul>
+        <li <%= 'class="active"'.html_safe if params[ :id ] == 'service' %>><a href="<%= page_path( "service" ) %>">服務項目</a></li>
+        <li <%= 'class="active"'.html_safe if params[ :controller ] == 'casestudies' %>><a href="<%= casestudies_path %>">成功案例</a></li>
+        <li <%= 'class="active"'.html_safe if params[ :id ] == 'about' %>><a href="<%= page_path( "about" ) %>">關於棋略</a></li>
+        <li <%= 'class="active"'.html_safe if params[ :id ] == 'contact' %>><a href="<%= page_path( "contact" ) %>">聯絡我們</a></li>
+      </ul>
+    </nav>

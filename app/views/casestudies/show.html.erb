@@ -1,0 +1,68 @@
+<style>
+	#bread-crumbs{background:url(<%= image_path("case-01.jpg") %>) 0 0 no-repeat;height:35px;border-radius:5px 5px 0px 0px;width:855px;margin:0 auto;color:#fff;padding:17px 0 0 20px}
+	#bread-crumbs a,#article-footer a{color:#fff}
+	
+	article{width:785px;margin:0 auto;overflow:hidden;background:#fff;padding:35px 45px}
+	hgroup{height:100px}
+	h3{font:300 30px "微軟正黑體";color:#c74200}
+	h4{font:300 18px "微軟正黑體";color:#c74200}
+	#main{float:left;width:487px;line-height:28px}
+	#main p{margin-bottom:30px}
+	#info{float:right;color:#343434;font-size:13px;padding-left:15px;border-left:1px solid #aaa;line-height:25px}
+	
+	#article-footer{background:url(<%= image_path("case-02.jpg") %>) 0 0 no-repeat;height:35px;border-radius:0px 0px 5px 5px ;width:855px;margin:0 auto;text-align:right;padding:17px 20px 0 0}
+	#article-footer img{margin-right:10px;position:relative;top:2px}
+	#image-list li{background:#fff;padding:10px}
+	#image-list img{max-width:350px;height:auto;padding:3px;background:#fff;box-shadow:0 0 5px #777}
+</style>
+
+    <h2><img src="<%= image_path("h2-case.png") %>" width="253" height="81"></h2>
+    <section id="bread-crumbs"><a href="<%= root_url %>">首頁</a> > <a href="<%= casestudies_path %>">成功案例</a> ></section>
+    <article>
+    <hgroup>
+    <h3><%= @casestudy.title %></h3>
+    <h4><%= @casestudy.subtitle %></h4>
+    </hgroup>
+    <section id="main">
+    <p>
+	    <%= @casestudy.content.gsub( /\n/, "<br />" ).html_safe %>
+    </p>
+
+
+<ul id="image-list">
+	<% @photos.each do | photo | %>
+	<li><img src="<%= photo.path.normal %>" width="350" height="234"></li>
+	<% end %>
+</ul>
+
+    </section><!--main-->
+    
+    <section id="info">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td>客戶名稱：</td>
+    <td><%= @casestudy.client %></td>
+  </tr>
+  <tr>
+    <td>類　　別：</td>
+    <td><%= @casestudy.category %></td>
+  </tr>
+  <tr>
+    <td>活動時間：</td>
+    <td><%= @casestudy.active_time.to_s( :date_slashed )  %>~<%= @casestudy.active_time_end.to_s( :date_slashed ) %></td>
+  </tr>
+  <tr>
+    <td>活動地點：</td>
+    <td><%= @casestudy.place %></td>
+  </tr>
+  <tr>
+    <td>出席對象：</td>
+    <td><%= @casestudy.invitation %></td>
+  </tr>
+</table>
+
+    </section><!--info-->    
+    
+     </article>
+    <section id="article-footer"><a href="<%= casestudies_path %>"><img src="<%= image_path("case-05.png") %>" width="14" height="14">回成功案例列表</a></section>
+  

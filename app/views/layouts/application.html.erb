@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>  ChessWin</title>
+<!--[if IE]>
+<script src="js/html5.js"></script>
+<![endif]-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <%= stylesheet_link_tag    "reset", :media => "all" %>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+<title>成功案例│棋略整合行銷</title>
 </head>
+
 <body>
-
-<%= yield %>
-
-	<div id="footer">		
-		<p>ChessWin All Rights Reserved</p>
-		<p>Produce & Maintained by <a href="http://www.summers.com.tw" target="_blank">Summers Advertising.</a></p>
-	</div>
-
+<section id="wrapper">
+  <header>
+    <h1><a href="<%= root_url %>">棋略整合行銷</a></h1>
+    <%= render :partial => "/navmain" %>
+  </header>
+  <section id="container">
+  	<%= yield %>
+  </section>
+  <!--container--> 
+</section>
+<!--wrapper-->
+<footer> <img src="<%= image_path("footer.png") %>" width="24" height="24">棋略整合行銷顧問有限公司    版權所有 © 2012 Chesswin All Rights Reserved. </footer>
 </body>
 </html>
