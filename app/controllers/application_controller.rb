@@ -1,6 +1,7 @@
 # encoding: utf-8
 class ApplicationController < ActionController::Base
   before_filter :makeTitle
+  after_filter :clearTitle
   
   protect_from_forgery
   
@@ -19,5 +20,9 @@ class ApplicationController < ActionController::Base
 private
 	def makeTitle
 		$metaTitle = $metaTitles[ params[ :controller ] ][ params[ :id ] || params[ :action ] ] if $metaTitle.nil? && !$metaTitles[ params[ :controller ] ].nil?
+	end
+	
+	def clearTitle
+		$metaTitle = nil
 	end
 end
