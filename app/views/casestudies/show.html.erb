@@ -49,7 +49,7 @@
   </tr>
   <tr>
     <td>活動時間：</td>
-    <td><%= @casestudy.active_time.to_s( :date_slashed )  %>~<%= @casestudy.active_time_end.to_s( :date_slashed ) %></td>
+    <td><%= @casestudy.active_time.to_s( :date_slashed ) if !@casestudy.active_time.nil? %>~<%= @casestudy.active_time_end.to_s( :date_slashed ) if !@casestudy.active_time_end.nil?%></td>
   </tr>
   <tr>
     <td>活動地點：</td>

@@ -48,7 +48,7 @@ class Admin::CasestudiesController < AdminController
 
     respond_to do |format|
       if @casestudy.save
-        format.html { redirect_to edit_admin_casestudy_path(@casestudy), notice: 'Casestudy was successfully created.' }
+        format.html { redirect_to edit_admin_casestudy_path(@casestudy), notice: '成功案例建立完成。' }
         format.json { render json: @casestudy, status: :created, location: @casestudy }
       else
         format.html { render action: "new" }
@@ -64,7 +64,7 @@ class Admin::CasestudiesController < AdminController
 
     respond_to do |format|
       if @casestudy.update_attributes(params[:casestudy])
-        format.html { redirect_to admin_casestudy_path(@casestudy), notice: 'Casestudy was successfully updated.' }
+        format.html { redirect_to admin_casestudy_path(@casestudy), notice: '成功案例更新完成。' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
