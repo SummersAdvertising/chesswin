@@ -18,6 +18,6 @@ class ApplicationController < ActionController::Base
 
 private
 	def makeTitle
-		$metaTitle = $metaTitles[ params[ :controller ] ][ params[ :id ] || params[ :action ] ] if $metaTitle.nil?
+		$metaTitle = $metaTitles[ params[ :controller ] ][ params[ :id ] || params[ :action ] ] if $metaTitle.nil? && !$metaTitles[ params[ :controller ] ].nil?
 	end
 end
