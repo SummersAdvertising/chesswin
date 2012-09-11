@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--[if IE]>
+<script src="js/html5.js"></script>
+<![endif]-->
+
+<%= render :partial => "/meta" %>
+
+  <%= stylesheet_link_tag    "reset", :media => "all" %>
+  <%= stylesheet_link_tag    "index", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+<script type="text/javascript">
+$(document).ready(function () {
+	$(function(){
+		$('#obj1').delay(1000).animate({opacity:1,'filter':'alpha(opacity=100)',left:80},750)
+		$('#obj2').delay(1750).animate({width:283},1000)
+		$('#obj3').delay(2750).animate({opacity:1,'filter':'alpha(opacity=100)',left:395},750)
+		$('#obj4').delay(3500).animate({width:365},1000)
+		$('#obj5').delay(4500).animate({opacity:1,'filter':'alpha(opacity=100)',top:254},750)
+	});
+});
+</script>
+<title>棋略整合行銷</title>
+  
+</head>
+
+<body>
+  <header>
+  <section id="header-in">
+    <h1><a href="index.html">棋略整合行銷</a></h1>
+    <%= render :partial => "/navmain" %>
+    </section><!--header-in-->
+  </header>
+
+
+<%= yield %>
+
+<footer>
+<section id="footer-in">
+<p><img src="<%= image_path("footer.png") %>" width="24" height="24">合作客戶：Alcatel、Cisco、CPCNet、EMC、Phoenix Technology、TrendMicro、威盛電子、舍弗勒集團</p>
+棋略整合行銷顧問有限公司 版權所有 © 2012 Chesswin All Rights Reserved. 
+</section><!--footer-in-->
+</footer>
+</body>
+</html>

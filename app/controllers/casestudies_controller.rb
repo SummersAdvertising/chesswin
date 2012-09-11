@@ -14,6 +14,7 @@ class CasestudiesController < ApplicationController
 		@photos = @casestudy.photos.order( "created_at desc" )
 		
 		$metaDescription = @casestudy.content.length > 150 ? @casestudy.content[0..149] + "..." : @casestudy.content
+		$metaTitle = @casestudy.title
 		
 		respond_to do | format |
 			format.html
