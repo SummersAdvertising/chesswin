@@ -1,3 +1,20 @@
+<script type="text/javascript">
+	function checkForm() {
+		var is_error = false;
+		
+		$("[name^=casestudy]").each(function() {
+			if ( $(this).val().length <= 0 ) {
+				is_error = true;
+			}
+		});
+		
+		if ( is_error ) {
+			alert("請確認是否已完成填寫所有欄位。");
+			return false;
+		}
+	}
+</script>
+
 
   <%= stylesheet_link_tag "jquery.ui.datepicker" %>
   
@@ -57,7 +74,7 @@
 </div>
 
 <div style="clear:both;">&nbsp;</div>
-<div class="button"><%= f.submit "儲存" do %><img src="<%= image_path"save.png" %>" /><% end %></div>
+<div class="button"><%= f.submit "儲存", :onClick => "return checkForm();" do %><img src="<%= image_path"save.png" %>" /><% end %></div>
 <div class="button"><%= link_to admin_casestudies_path do %><img src="<%= image_path"cancel.png" %>" />取消<% end %></div>
 
 <% end %>
