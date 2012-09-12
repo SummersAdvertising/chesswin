@@ -40,23 +40,23 @@
     <section id="info">
     <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td>客戶名稱：</td>
-    <td><%= @casestudy.client %></td>
+    <td width="25%" align="left" valign="top">客戶名稱：</td>
+    <td width="75%"><%= @casestudy.client %></td>
   </tr>
   <tr>
-    <td>類　　別：</td>
+    <td align="left" valign="top">類　　別：</td>
     <td><%= @casestudy.category %></td>
   </tr>
   <tr>
-    <td>活動時間：</td>
+    <td align="left" valign="top">活動時間：</td>
     <td><%= @casestudy.active_time.to_s( :date_slashed )  %>~<%= @casestudy.active_time_end.to_s( :date_slashed ) %></td>
   </tr>
   <tr>
-    <td>活動地點：</td>
+    <td align="left" valign="top">活動地點：</td>
     <td><%= @casestudy.place %></td>
   </tr>
   <tr>
-    <td>出席對象：</td>
+    <td align="left" valign="top">出席對象：</td>
     <td><%= @casestudy.invitation %></td>
   </tr>
 </table>
