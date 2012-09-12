@@ -12,7 +12,7 @@ header h1 a{display:block;width:170px;height:79px;background:image-url("logo.png
 header nav{float:right;width:42%;margin:42px 3% 0 0;height:58px}
 header nav li{float:left;width:25%;*width:107px;height:33px;text-align:center;padding-top:25px}
 header nav li:hover{background:image-url("index-active.png") bottom center no-repeat}
-header nav li a{color:#ccc;font:700 16px "微軟正黑體";}
+header nav li a{color:#ccc;font:700 16px "微軟正黑體";display:block;height:100%;width:100%}
 header nav li:hover a{text-shadow:-2px 2px 3px #000;color:#fff}
 
 /*-------------------------------------------------------------------動畫---*/

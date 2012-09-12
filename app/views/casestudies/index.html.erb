@@ -5,19 +5,18 @@
 	#container{background:url(<%= image_path("bg2.jpg") %>) 0 -50px no-repeat;}
 	article ul{overflow:hidden;height:183px;width:951px;margin:0 auto 50px auto}
 	article li{width:277px;height:162px;background:url(<%= image_path("case-03.jpg") %>) 0 0 no-repeat;float:left;-webkit-transition:all .5s ease;padding:20px 20px 0 20px}
-	article li:hover{background:url(<%= image_path("case-04.jpg") %>) 0 0 no-repeat}
-	article li a{color:#d8d8d8}
+	article li a{color:#d8d8d8;-webkit-transition:all .5s ease;-moz-transition:all .5s ease;}
 	article li a:hover{text-decoration:none}
 	hgroup{height:106px;font-size:14px}
 	.info{height:26px;font-size:12px;padding:10px 0 0 0}
-	.case1,.box1{border-bottom:1px solid #FCB732}
-	.case1 a{color:#FCB732}
-	.case2,.box2{border-bottom:1px solid #F16803}
-	.case2 a{color:#F16803}
-	.case3,.box3{border-bottom:1px solid #FD4444}
-	.case3 a{color:#FD4444}
-	.case4,.box4{border-bottom:1px solid #FF8076}
-	.case4 a{color:#FF8076}
+	.box1{border-bottom:1px solid #FCB732}
+	.box1:hover a{color:#FCB732}
+	.box2{border-bottom:1px solid #F16803}
+	.box2:hover a{color:#F16803}
+	.box3{border-bottom:1px solid #FD4444}
+	.box3:hover a{color:#FD4444}
+	.box4{border-bottom:1px solid #FF8076}
+	.box4:hover a{color:#FF8076}
 </style>
 
 <h2><img src="<%= image_path("h2-case.png") %>" width="253" height="81"></h2>

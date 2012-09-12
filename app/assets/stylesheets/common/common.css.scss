@@ -2,7 +2,6 @@
 
 body{font:300 15px "微軟正黑體";background:image-url("header.png") center 0 no-repeat #343434;}
 a{font:300 15px "微軟正黑體";text-decoration:none}
-a:hover{text-decoration:underline}
 #wrapper{width:1024px;margin:0 auto;background:image-url("header.png") center 0 no-repeat}
 
 /*-------------------------------------------------------------------頁首---*/
@@ -12,7 +11,7 @@ header h1{float:left;width:55%;margin-top:15px}
 header h1 a{display:block;width:170px;height:79px;background:image-url("logo.png") 0 0 no-repeat;font-size:0;text-indent:-9999px}
 header nav{float:right;width:42%;margin:70px 3% 0 0;height:37px}
 header nav li{float:left;width:25%;*width:107px;height:37px;text-align:center}
-header nav li a{color:#000;text-shadow:0 1px 0 #eee}
+header nav li a{color:#000;text-shadow:0 1px 0 #eee;display:block;width:100%;height:100%}
 header nav .active{background:image-url("active.png") center bottom no-repeat}
 
 /*-------------------------------------------------------------------頁身---*/
