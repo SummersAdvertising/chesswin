@@ -118,11 +118,10 @@ h2{font:italic 300 18px "細明體";padding:5px 0 0 10px}
 .main-banner th{font:700 13px "新細明體";color:#31343B;padding-top:3px}
 .main-banner input{width:100%;border:1px solid #ddd;font:300 13px "Helvetica";color:#555;	height:18px;margin-top:0px}
 .main-banner textarea{border:1px solid #ddd;width:99%;font:300 13px "Helvetica";color:#333;line-height:20px;overflow:hidden;min-height:50px}
-.main-banner .upload-img{border:3px double #ccc;background:url(../images/upload-image.jpg) center center no-repeat}
 
 /*-------------------------------------------------------------------版權---*/
 
-#footer{width:768px;margin:0 auto;color:#713817;text-shadow:0 1px 0 #FAD3A6;padding-top:15px;font:300 12px "courier"}
+#footer{width:768px;margin:0 auto;color:#713817;text-shadow:0 1px 0 #FAD3A6;padding-top:15px;font:300 12px "courier"; text-align:  center;}
 
 /*-------------------------------------------------------------------PlaceHolder---*/
 
@@ -131,5 +130,5 @@ h2{font:italic 300 18px "細明體";padding:5px 0 0 10px}
  
 /*-------------------------------------------------------------------提示---*/
 
-.warning{height:25px;position:absolute;top:50px;background:image-url("tips.png") 10px center no-repeat #3F434D;right:0px;color:#fff;padding:10px 25px 0 45px;
+.warning{height:25px;position:absolute;top:50px;background:image-url("tips.png") 15px center no-repeat #3F434D;right:0px;color:#fff;padding:10px 25px 0 45px;
 border-radius:0px 0px 5px 5px;box-shadow:0 0 5px #333;font:300 12px "courier";text-shadow:0 1px 0 #000}

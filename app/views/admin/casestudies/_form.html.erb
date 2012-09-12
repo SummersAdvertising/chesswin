@@ -74,7 +74,7 @@
 </div>
 
 <div style="clear:both;">&nbsp;</div>
-<div class="button"><%= f.submit "儲存", :onClick => "return checkForm();" do %><img src="<%= image_path"save.png" %>" /><% end %></div>
+<div class="button"><img src="<%= image_path"save.png" %>" /><%= f.submit "儲存", :onClick => "return checkForm();" %></div>
 <div class="button"><%= link_to admin_casestudies_path do %><img src="<%= image_path"cancel.png" %>" />取消<% end %></div>
 
 <% end %>
