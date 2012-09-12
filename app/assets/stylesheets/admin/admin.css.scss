@@ -28,20 +28,8 @@ h1 a{font:700 15px "Helvetica";color:#eee;}
 #side li a{background-image:image-url("side.png");background-repeat:no-repeat;
 display:block;width:100%;height:40px;color:#83541A;text-shadow:0 1px 0 #F0C98C;padding-top:60px;}
 
-#update{background-position:-710px -68px}
-#update:hover{background-position:-710px 12px}
-/*
-#announcement{background-position:-70px -68px}
-#announcement:hover{background-position:-70px 12px}
-*/
 #project{background-position:12px -68px}
 #project:hover{background-position:12px 12px}
-#video{background-position:-310px -68px}
-#video:hover{background-position:-310px 12px}
-#experience{background-position:-388px -68px}
-#experience:hover{background-position:-388px 12px}
-#banner{background-position:-627px -68px}
-#banner:hover{background-position:-627px 12px}
 #users{background-position:-790px -68px}
 #users:hover{background-position:-790px 12px}
 
@@ -68,7 +56,7 @@ width:646px;padding:10px;min-height:580px;}
 
 /*-------------------------------------------------------------------按鈕---*/
 
-.button{background:image-url("list.jpg") 0 0 repeat-x;border:1px solid #ccc;margin:0 0 10px 10px;
+.button{background:image-url("list.jpg") 0 0 repeat-x;border:1px solid #ccc;margin:0 0 10px 10px;font-weight:700!important;
 border-radius:5px;height:27px;padding:3px 0 0 10px;width:100px;float:right;position:relative;z-index:1}
 .button a{color:#333;text-shadow:0 1px 0 #fff;font-weight:700}
 .button:hover a{color:#777}
@@ -132,9 +120,16 @@ h2{font:italic 300 18px "細明體";padding:5px 0 0 10px}
 .main-banner textarea{border:1px solid #ddd;width:99%;font:300 13px "Helvetica";color:#333;line-height:20px;overflow:hidden;min-height:50px}
 .main-banner .upload-img{border:3px double #ccc;background:url(../images/upload-image.jpg) center center no-repeat}
 
+/*-------------------------------------------------------------------版權---*/
 
-#footer{
-	width: 60%;
-	text-align:  center;
-	margin: 12px auto;
-}
+#footer{width:768px;margin:0 auto;color:#713817;text-shadow:0 1px 0 #FAD3A6;padding-top:15px;font:300 12px "courier"}
+
+/*-------------------------------------------------------------------PlaceHolder---*/
+
+::-webkit-input-placeholder {color:#ccc}
+ input:-moz-placeholder {color:#ccc} 
+ 
+/*-------------------------------------------------------------------提示---*/
+
+.warning{height:25px;position:absolute;top:50px;background:image-url("tips.png") 10px center no-repeat #3F434D;right:0px;color:#fff;padding:10px 25px 0 45px;
+border-radius:0px 0px 5px 5px;box-shadow:0 0 5px #333;font:300 12px "courier";text-shadow:0 1px 0 #000}
