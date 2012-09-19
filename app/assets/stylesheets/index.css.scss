@@ -1,5 +1,6 @@
 /*-------------------------------------------------------------------全域---*/
 
+article, aside, dialog, footer, header, section, footer, nav, figure, menu {display: block}
 body{font:300 15px "微軟正黑體";background:#ddd}
 a{font:300 15px "微軟正黑體";text-decoration:none}
 #header-in,#article-in,#footer-in{width:1024px;margin:0 auto}
@@ -20,11 +21,19 @@ header nav li:hover a{text-shadow:-2px 2px 3px #000;color:#fff}
 article{background:#1e1e1e}
 #article-in{background:image-url("index-bg.png") 0 0 no-repeat #1e1e1e;height:635px;position:relative;}
 .obj{position:absolute}
-#obj1{top:70px;left:70px;opacity:0;filter:alpha(opacity=0)}
-#obj2{top:230px;left:140px;width:0;overflow:hidden}
-#obj3{top:140px;left:385px;opacity:0;filter:alpha(opacity=0)}
-#obj4{top:204px;left:435px;width:0;overflow:hidden}
-#obj5{top:244px;left:625px;opacity:0;filter:alpha(opacity=0)}
+#obj1{top:70px;left:70px;opacity:0;filter:alpha(opacity=0);display/**/:none}
+#obj2{top:230px;left:140px;width:0;overflow:hidden;display/**/:none}
+#obj3{top:140px;left:385px;opacity:0;filter:alpha(opacity=0);display/**/:none}
+#obj4{top:204px;left:435px;width:0;overflow:hidden;display/**/:none}
+#obj5{top:244px;left:625px;opacity:0;filter:alpha(opacity=0);display/**/:none}
+
+#obj6{top:50px;left:70px;display:none;display/**/:block}
+:root #obj1{display:block}
+:root #obj2{display:block}
+:root #obj3{display:block}
+:root #obj4{display:block}
+:root #obj5{display:block}
+:root #obj6{display:none}
 
 /*-------------------------------------------------------------------頁尾---*/
 

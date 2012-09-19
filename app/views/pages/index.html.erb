@@ -3,11 +3,11 @@
 <script type="text/javascript">
 $(document).ready(function () {
 	$(function(){
-		$('#obj1').delay(1000).animate({opacity:1,'filter':'alpha(opacity=100)',left:80},750)
+		$('#obj1').delay(1000).animate({opacity:1,left:80},750)
 		$('#obj2').delay(1750).animate({width:283},1000)
-		$('#obj3').delay(2750).animate({opacity:1,'filter':'alpha(opacity=100)',left:395},750)
+		$('#obj3').delay(2750).animate({opacity:1,left:395},750)
 		$('#obj4').delay(3500).animate({width:365},1000)
-		$('#obj5').delay(4500).animate({opacity:1,'filter':'alpha(opacity=100)',top:254},750)
+		$('#obj5').delay(4500).animate({opacity:1,top:254},750)
 	});
 });
 </script>
@@ -19,5 +19,6 @@ $(document).ready(function () {
   <div id="obj3" class="obj"><img src="<%= image_path("index-03.png") %>"></div>
   <div id="obj4" class="obj"><img src="<%= image_path("index-04.png") %>"></div>
   <div id="obj5" class="obj"><img src="<%= image_path("index-05.png") %>"></div>
+  <div id="obj6" class="obj"><img src="<%= image_path("index-06.png") %>"></div>
   </section><!--article-in-->
 </article>

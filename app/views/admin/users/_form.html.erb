@@ -57,5 +57,5 @@
 	  </tr>
 	</table>	
 </div>
-<div class="button"><%= f.submit "新增帳號", :onClick => "return checkForm();" do %><img src="images/add.png"><% end %></div>
+<div class="button"><img src="<%= image_path("add.png") %>"><%= f.submit "新增帳號", :onClick => "return checkForm();" %></div>
 <% end %>
