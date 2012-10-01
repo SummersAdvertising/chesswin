@@ -6,20 +6,17 @@
 	</p>
 <% end %>
 
-<%#= form_for @photo, :url => admin_casestudy_photos_path( @casestudy ) do | f | %>
 
-	<%#= f.label :path %>
-	<%#= f.file_field :path %>
-		  
-	<%#= f.submit %>
-
-<%# end %>
 
 <%= stylesheet_link_tag "filedrop" %>
 <h2 style="clear:both">上傳圖片</h2>
-
+<form id="fileForm" method="post" enctype="multipart/form-data" action="<%= admin_casestudy_photos_path( @casestudy )  %>">
+	<input id="fileUploader" type="file" name="photo[path]" style="" />
+	<input name="authenticity_token" type="hidden" value="<%= session[ :_csrf_token ] %>" />
+	<input id="fileSubmit" type="submit" value="上傳檔案" />
+	<p class="alert" style="color: #900; font-weight: 600;">＊若您的瀏覽器不支援非同步上傳，請使用一般上傳模式。</p>
+</form>
 <div class="main-upload" id="dropbox">
-
 </div>
 
 
@@ -47,8 +44,7 @@ $(function(){
 		
     	error: function(err, file) {
 			switch(err) {
-				case 'BrowserNotSupported':
-					showMessage('Your browser does not support HTML5 file uploads!');
+				case 'BrowserNotSupported':					
 					break;
 				case 'TooManyFiles':
 					alert('Too many files! Please select 5 at most! (configurable)');

@@ -41,7 +41,7 @@ class Admin::PhotosController < AdminController
 				# 將id塞回檔名
 				@photo.update_attribute('path', "#{@photo.id}#{@photo.path}")		
 				
-				format.html { redirect_to admin_casestudy_photos_path(@casestudy), :notice => "圖片建立完成" }
+				format.html { redirect_to edit_admin_casestudy_path(@casestudy) + "#fileUploader", :notice => "圖片建立完成" }
 				format.json { render json: @photo, status: :created, location => @photo }	
 							
 			else

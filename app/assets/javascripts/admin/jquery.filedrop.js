@@ -195,7 +195,6 @@
 				builder;
 				
 			newName = rename(file.name);
-			console.log(newName);
 			if (typeof newName === "string") {
 				builder = getBuilder(newName, e.target.result, boundary);
 			} else {
