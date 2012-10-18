@@ -15,7 +15,7 @@
 <link rel="image_src" href="<%= image_path("thumb.jpg") %>"> 
 <meta property="og:image" content=" <%= image_path("thumb.jpg") %>"> 
 <link rel="SHORTCUT ICON" href="<%= image_path("favicon.ico") %>">
-<meta property="og:title" content="棋略整合行銷"/> 
+<meta property="og:title" content="<%= $metaTitle.nil? ? "" : $metaTitle + "│" %>棋略整合行銷"/> 
 
 
 <title><%= $metaTitle.nil? ? "" : $metaTitle + "│" %>棋略整合行銷</title>
