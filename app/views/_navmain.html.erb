@@ -6,3 +6,7 @@
         <li <%= 'class="active"'.html_safe if params[ :id ] == 'contact' %>><a title="聯絡我們" href="<%= page_path( "contact" ) %>">聯絡我們</a></li>
       </ul>
     </nav>
+	<div id="social">
+    <a href="http://www.facebook.com/chesswin.marketing" target="_blank"><img src="<%= image_path("fb.jpg") %>"></a>
+    <a href="http://chesswinmarketing.blogspot.tw/" target="_blank"><img src="<%= image_path("blog.jpg") %>"></a>
+    </div>

@@ -16,6 +16,10 @@ header nav li:hover{background:image-url("index-active.png") bottom center no-re
 header nav li a{color:#ccc;font:700 16px "微軟正黑體";display:block;height:100%;width:100%}
 header nav li:hover a{text-shadow:-2px 2px 3px #000;color:#fff}
 
+#social{position:absolute;right:-17px;top:68px}
+#social a{margin-right:2px}
+#social a:hover{opacity:.8;filter:alpha(opacity=80)}
+
 /*-------------------------------------------------------------------動畫---*/
 
 article{background:#1e1e1e}
