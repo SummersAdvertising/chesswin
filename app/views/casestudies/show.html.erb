@@ -24,9 +24,10 @@
     <h4><%= @casestudy.subtitle %></h4>
     </hgroup>
     <section id="main">
-    <p>
+    <p id="caseContent">
 	    <%= @casestudy.content.gsub( /\n/, "<br />" ).html_safe %>
     </p>
+
 
 
 <ul id="image-list">
@@ -65,3 +66,8 @@
     
      </article>
     <section id="article-footer"><a href="<%= casestudies_path %>"><img src="<%= image_path("case-05.png") %>" width="14" height="14">回成功案例列表</a></section>
+
+
+<script type="text/javascript">
+	$('p#caseContent').html($('p#caseContent').html().replace(/(https?:\/\/[a-zA-Z0-9\.\-\/]+)/g, '<a href="$1" target="_blank">$1</a>'));
+</script>
